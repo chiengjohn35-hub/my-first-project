@@ -118,7 +118,7 @@ else:
 
 
     else:
-        print(f"then {students_name} has to seat for the exams again!")
+        print(f"then {students_name} has to sat for the exams again!")
 
 
 
@@ -127,5 +127,6 @@ else:
 #     print(x)
 #     for y in obj:
 #      print(y+ ":", obj[y])
+
 
 
