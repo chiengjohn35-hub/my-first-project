@@ -1,7 +1,7 @@
 
 #student information stored in the nested dictionary
 students = {
-    "chieng":{
+    "david":{
         "age": 18,
         "Math": 76,
         "ENG": 82,
@@ -127,4 +127,5 @@ else:
 #     print(x)
 #     for y in obj:
 #      print(y+ ":", obj[y])
+
 
