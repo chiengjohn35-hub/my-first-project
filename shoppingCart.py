@@ -52,6 +52,8 @@ shopping()
 
 
 
+# I have some little problem espesically with calculation, it give out all the exact about of total price if added all together
+# please feel free to work on it if you can, as i will be working on finding the solution myself
 
 
 
