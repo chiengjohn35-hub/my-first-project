@@ -1,4 +1,4 @@
-#make s single bank program
+#make s simple bank program
 #let there be balance, withdraw and deposit then maybe quit
 #if user input wants to check balance. print the account balance
 #if user input wants to deposit, ask how much money user wants to deposit
@@ -59,6 +59,7 @@ def bank():
 
 
         print("Thanks, Have a nice day!")
+
 
 
 
