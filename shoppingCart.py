@@ -7,50 +7,46 @@
 
 
 def shopping():
-
-    print("              MENU")
-    print("--------------------------------------------")
-    fruits = ["mango", "orange", "banana", "cherry", "apple", "pineapple", ]
+    print("             MENU")
+    print("------------------------------------")
+    fruits = ["orange", "mango", "pineapple", "cherry", "banana"]
     fruits_selected = []
 
     for x in fruits:
-        print(x, end=" " )
+        print(x, end=" ")
 
-    print(sep="")
-    print("--------------------------------------------")
+    print(sep=" ")
+    print("------------------------------------")
+
     is_running = True
-    total_price = 0.0
-
+    total_price =0.0
 
     while is_running:
-        foods = input("Select the fruits you are buying (Q) to quit : ").strip()
-        if foods.lower() == "q":
-            is_running = False
+        food = input("select the food you want (Q) to quit:").strip()
+        if food.lower() == "q":
+            is_running =False
         else:
-            if foods not in fruits:
-                print(f"{foods} is unavailable in the menu")
-                print("please select another!")
-                continue
-            price = float(input(f"what is the price of {foods}?:"))
-            total_price += price
-
+            if food not in fruits:
+                print(f"{food} is unavailable in the Menu, ")
+                print("Please select another one!")
+            else:
+                price = float(input(f"what is the price of {food}:"))
+                total_price+=price
 
         for x in fruits:
-            if foods in x:
-                fruits_selected.append(foods)
+            if food in x:
+                fruits_selected.append(food)
 
 
-
-
-
-    print("--------------------------------------------------")
-    print("             your cart")
-
-
+    print("------------------------------------")
+    print("-------------Your cart---------------")
     print(fruits_selected)
-    print(f"Your total price of food is ${round(total_price,2)}")
-    print("*************************************************")
-    print("Thanks for shopping, Have a nice day")
+    print(f"your total amount is ${round(total_price,2)}")
+    print("************************************")
+    print("thanks for shopping, Have a nice day!")
+
+
+
 
 shopping()
 
