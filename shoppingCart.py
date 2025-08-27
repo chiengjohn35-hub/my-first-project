@@ -9,11 +9,12 @@
 
 
 def shopping():
-    def history(order):
+    #create a function name 'history' to view pass orders
+    def history():
         try:
             with open("orders.txt", "r") as file:
                 print("Your past orders \n")
-                file.read(order)
+                print(file.read())
         except FileNotFoundError:
             print("You have no past orders history yet!")
 
@@ -47,8 +48,11 @@ def shopping():
                     try:
                         price = int(input(f"What is the price of {order}:"))
                         total_amount += price
-                        with open("price.txt", "a" and "w") as file:
+
+                        #save to orders to file
+                        with open("price.txt", "a" ) as file:
                             file.write(order)
+                            print(f"{order} - {price})
                     except ValueError:
                         print("Please, enter the price in digits or numbers!")
                         continue
@@ -65,6 +69,7 @@ def shopping():
     if __name__=="__main__":
         main()
 shopping()
+
 
 
 
