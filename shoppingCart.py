@@ -9,16 +9,18 @@
 
 
 def shopping():
-    #create a function name 'history' to view pass orders
+    
+    #this nested function defined is use for viewing past orders history
     def history():
         try:
-            with open("orders.txt", "r") as file:
+            with open("price.txt", "r") as file:
                 print("Your past orders \n")
                 print(file.read())
+                print("--------------------------------")
         except FileNotFoundError:
             print("You have no past orders history yet!")
-
-
+            
+                   #a list for foods/fruits
     print("----------------food menu---------------------")
     food = ("orange", "banana", "cherry", "mango", "pineapple")
     food_selected=set()
@@ -34,31 +36,34 @@ def shopping():
             order = input("Type 'history' to view your pass orders \n"
                           "(Q) to quit or Enter your order: ").strip()
 
-
             if order.lower()=="q":
                 break
             else:
+                
+                #call that nested function name view_history() on top of the file
                 if order == 'history':
-                    history(order)
+                    history()
                     continue
+
+                    #Invalid order in the list create 
                 elif order not in food:
                     print(f"{order} is unavailable in the menu")
                     print("Please select a another one!")
+
+                    #valid order for items/values in the list we created
                 elif order in food:
                     try:
                         price = int(input(f"What is the price of {order}:"))
                         total_amount += price
+                        food_selected.add(order)
 
-                        #save to orders to file
-                        with open("price.txt", "a" ) as file:
-                            file.write(order)
-                            print(f"{order} - {price})
+                        #saving to file
+                        file = open("price.txt", "a")
+                        file.write(f"{order} - ${round(price,2)} \n")
+                        file.close()
                     except ValueError:
                         print("Please, enter the price in digits or numbers!")
                         continue
-
-                if order in food:
-                    food_selected.add(order)
 
         print(sep=" ")
         print("-------------your order-------------------")
@@ -69,6 +74,8 @@ def shopping():
     if __name__=="__main__":
         main()
 shopping()
+
+
 
 
 
